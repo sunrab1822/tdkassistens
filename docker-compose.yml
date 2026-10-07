@@ -1,0 +1,24 @@
+services:
+  tdk:
+    build: .
+    image: tdk-app:latest
+    container_name: tdk-asszisztens
+    ports:
+      - "8080:80"
+    volumes:
+      - tdk-data:/data
+    environment:
+      APP_URL: http://localhost:8080
+    restart: unless-stopped
+    # NVIDIA GPU (WSL2 + NVIDIA driver + nvidia-container-toolkit) esetén
+    # vedd ki kommentből az alábbi blokkot a gyorsabb inferenciáért:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+volumes:
+  tdk-data:

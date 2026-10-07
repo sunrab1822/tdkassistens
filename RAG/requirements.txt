@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+chromadb
+sentence-transformers
+openai
+pymupdf
+Pillow
+pytesseract
+duckduckgo-search
+langchain-text-splitters
+tiktoken
